@@ -1,3 +1,6 @@
+#
+#Please ensure you have the data file in the current folder from where you are running the R script
+#
 #reading files
 X_test <- read.table("UCIHARDataset/test/X_test.txt", header=F, sep="")
 Y_test <- read.table("UCIHARDataset/test/Y_test.txt", header=F, sep="")
