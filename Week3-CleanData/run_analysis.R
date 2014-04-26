@@ -1,6 +1,7 @@
 #
 #Please ensure you have the data file in the current folder from where you are running the R script
 #
+run_analysis <-function(){
 #reading files
 X_test <- read.table("UCIHARDataset/test/X_test.txt", header=F, sep="")
 Y_test <- read.table("UCIHARDataset/test/Y_test.txt", header=F, sep="")
@@ -43,9 +44,16 @@ resultset$Group.1 <- NULL
 resultset$Group.2 <- NULL
 resultset$Activity <- factor (resultset$Activity , labels=activity[,2])
 
-#Writeresult set to file
+#Writeresult to csv file
 write.csv(resultset, file = "resultset.csv")
 
+#Write Result set to txt file
+write.table(resultset, file = "resultset.txt", append = FALSE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = FALSE,
+            col.names = TRUE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+
+}
 
 
 
